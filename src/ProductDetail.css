@@ -1,0 +1,38 @@
+.product-detail {
+    padding: 20px;
+  }
+  
+  .product-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .product-detail h2 {
+    margin-bottom: 10px;
+  }
+  
+  .product-detail p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .product-detail h3 {
+    margin-top: 20px;
+  }
+  
+  .product-detail ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .product-detail li {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  

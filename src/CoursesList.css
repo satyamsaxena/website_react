@@ -1,0 +1,43 @@
+.courses-list {
+    padding: 20px;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    justify-content: left;
+  }
+  
+  a {
+    text-decoration: none;
+  }
