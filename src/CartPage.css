@@ -1,48 +1,80 @@
 .cart-container {
-    padding: 20px;
-  }
-  
-  .cart-items-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .cart-item-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-  }
-  
-  .item-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .item-name {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .item-description,
-  .item-category,
-  .item-stock,
-  .item-price,
-  .item-dprice,
-  .item-quantity {
-    margin: 5px 0;
-  }
-  
-  button {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #d32f2f;
-  }
-  
+  padding: 20px;
+}
+
+.cart-items-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  gap: 20px;
+}
+
+.item-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.quantity-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.quantity-button:hover {
+  background-color: #0056b3;
+}
+
+.remove-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  background-color: #c82333;
+}
+
+.checkout-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.checkout-button:hover {
+  background-color: #218838;
+}
+
+.error-message {
+  color: red;
+}

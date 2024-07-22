@@ -28,6 +28,7 @@ function ViewItem() {
         <p><strong>Name:</strong> {item.name}</p>
         <p><strong>Description:</strong> {item.description}</p>
         <p><strong>Price:</strong> ${item.price}</p>
+        <p><strong>Price:</strong> ${item.dprice}</p>Discount 
         <p><strong>Quantity:</strong> {item.quantity}</p>
       </div>
     </div>

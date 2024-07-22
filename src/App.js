@@ -12,7 +12,10 @@ import CreateItem from './CreateItem';
 import EditItem from './EditItem';
 import ViewItem from './ViewItem';
 import CartPage from './CartPage';
-
+import ProductList from './ProductList';
+import Checkout from './Checkout';
+import BillingDetails from './BillingDetails';
+import OrderConfirmation from './OrderConfirmation';
 
 import './App.css';
 
@@ -40,10 +43,10 @@ function App() {
             <li>
               <Link to="/login">Users</Link>
           </li>
-         
-         
+          <li>
+              <Link to="/cart">View Cart</Link>
+          </li>
           </ul>
-          
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -53,8 +56,12 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           {/* dashboared */}
+          <Route path="/products-list" element={<ProductList />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/billing-details" element={<BillingDetails />} />
+          <Route path="/order-confirmation" element={<OrderConfirmation />} />
           <Route path="/landing" element={<LandingPage />} />
-          <Route path="/cart" component={CartPage} />
+          <Route path="/cart" element={<CartPage/>} />
           <Route path="/dashboard" element={<DashboardHome />} />
           <Route path="/dashboard/create" element={<CreateItem />} />
           <Route path="/dashboard/edit/:id" element={<EditItem />} />

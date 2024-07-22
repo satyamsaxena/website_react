@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './LandingPage.css';
 
 function LandingPage() {
@@ -38,7 +40,7 @@ function LandingPage() {
   const addToCart = async (itemId) => {
     const token = localStorage.getItem('token');
     if (!token) {
-      alert('You need to login first');
+      toast.error('You need to login first');
       return;
     }
 
@@ -47,15 +49,16 @@ function LandingPage() {
         { itemId, quantity: 1 }, 
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      alert('Item added to cart');
+      toast.success('Item added to cart');
     } catch (error) {
       console.error('Error adding item to cart:', error);
-      alert('Error adding item to cart');
+      toast.error('Error adding item to cart');
     }
   };
 
   return (
     <div className="landing-container">
+      <ToastContainer />
       <h1>DB Products Page</h1>
       {user ? (
         <p>Welcome, {user.name}!</p>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
 function Login() {
@@ -26,19 +28,22 @@ function Login() {
     const url = isSignup ? 'http://localhost:5000/api/signup' : 'http://localhost:5000/api/login';
     try {
       const response = await axios.post(url, formData);
-      alert(response.data.message);
+      toast.success(response.data.message);
       if (!isSignup) {
         localStorage.setItem('token', response.data.token);
         navigate('/dashboard');
       }
     } catch (error) {
       console.error('Error:', error);
-      setError(error.response ? error.response.data : 'An error occurred.');
+      const errorMessage = error.response ? error.response.data : 'An error occurred.';
+      toast.error(errorMessage);
+      setError(errorMessage);
     }
   };
 
   return (
     <div className="login-container">
+      <ToastContainer />
       <h1>{isSignup ? 'Sign Up' : 'Login'}</h1>
       <form onSubmit={handleSubmit}>
         {isSignup && (

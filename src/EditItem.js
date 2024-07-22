@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Dashboard.css';
 import Sidebar from './Sidebar';
 
@@ -10,30 +12,36 @@ function EditItem() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/items/${id}`)
-      .then(response => {
+    const fetchItem = async () => {
+      try {
+        const response = await axios.get(`http://localhost:5000/api/items/${id}`);
         setItem(response.data);
-      })
-      .catch(error => {
+      } catch (error) {
         console.error('Error fetching item:', error);
-      });
+        toast.error('Error fetching item. Please try again.');
+      }
+    };
+
+    fetchItem();
   }, [id]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    axios.put(`http://localhost:5000/api/items/${id}`, item)
-      .then(() => {
-        navigate('/dashboard');
-      })
-      .catch(error => {
-        console.error('Error updating item:', error);
-      });
+    try {
+      await axios.put(`http://localhost:5000/api/items/${id}`, item);
+      toast.success('Item updated successfully!');
+      navigate('/dashboard');
+    } catch (error) {
+      console.error('Error updating item:', error);
+      toast.error('Error updating item. Please try again.');
+    }
   };
 
   if (!item) return <div>Loading...</div>;
 
   return (
     <div className="dashboard-container">
+      <ToastContainer />
       <Sidebar />
       <div className="dashboard-form">
         <h1>Edit Item</h1>
@@ -49,6 +57,10 @@ function EditItem() {
           <label>
             Price:
             <input type="number" value={item.price} onChange={(e) => setItem({ ...item, price: e.target.value })} required />
+          </label>
+          <label>
+            Discount Price:
+            <input type="number" value={item.dprice} onChange={(e) => setItem({ ...item, dprice: e.target.value })} required />
           </label>
           <label>
             Quantity:
