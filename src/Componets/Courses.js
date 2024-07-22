@@ -20,7 +20,7 @@ const CoursesList = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading courses...</p>;
+    return <div className="spinner"></div>;
   }
 
   return (

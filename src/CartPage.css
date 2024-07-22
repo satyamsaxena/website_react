@@ -1,0 +1,48 @@
+.cart-container {
+    padding: 20px;
+  }
+  
+  .cart-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .cart-item-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .item-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .item-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .item-description,
+  .item-category,
+  .item-stock,
+  .item-price,
+  .item-dprice,
+  .item-quantity {
+    margin: 5px 0;
+  }
+  
+  button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d32f2f;
+  }
+  

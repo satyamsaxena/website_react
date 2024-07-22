@@ -1,5 +1,5 @@
 import React from 'react';
-import App from './App';
+import App from '../App';
 
 let obj = {
   name: 'satyam',

@@ -21,7 +21,7 @@ const ProductDetail = () => {
   }, [id]);
 
   if (loading) {
-    return <p>Loading product details...</p>;
+    return <div className="spinner"></div>;
   }
 
   if (!product) {
